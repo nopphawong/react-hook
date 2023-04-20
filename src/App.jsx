@@ -1,34 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route, Link } from 'react-router-dom'
+import UseState from './pages/UseState'
 import './App.css'
+import { UseEffect } from './pages/UseEffect'
+import { UseContext } from './pages/UseContext'
+import { UseCallback } from './pages/UseCallback'
+import  { UseMemo } from './pages/UseMemo'
+import { UseRef } from './pages/UseRef'
+import { UseReducer } from './pages/UseReducer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to='/'>UseState</Link>
+          </li>
+          <li>
+            <Link to='/effect'>UseEffect</Link>
+          </li>
+          <li>
+            <Link to='/memo'>UseMemo</Link>
+          </li>
+          <li>
+            <Link to='/callback'>UseCallback</Link>
+          </li>
+          <li>
+            <Link to='/context'>UseContext</Link>
+          </li>
+          <li>
+            <Link to='/ref'>UseRef</Link>
+          </li>
+          <li>
+            <Link to='/reducer'>UseReducer</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path='/' element={<UseState />} />
+        <Route path='/effect' element={<UseEffect />} />
+        <Route path='/memo' element={<UseMemo />} />
+        <Route path='/callback' element={<UseCallback />} />
+        <Route path='/context' element={<UseContext />} />
+        <Route path='/ref' element={<UseRef />} />
+        <Route path='/reducer' element={<UseReducer />} />
+      </Routes>
+    </>
   )
 }
 
