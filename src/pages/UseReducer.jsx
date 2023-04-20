@@ -22,7 +22,7 @@ export const UseReducer = () => {
       <button
         onClick={() => {
           dispatch({ type: 'INCREMENT' })
-        //   dispatch({ type: 'toggleShowText' })
+          dispatch({ type: 'toggleShowText' })
         }}
       >
         Show Text
